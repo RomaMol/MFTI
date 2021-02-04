@@ -37,7 +37,7 @@ def house_roof(x, y, height_roof, width):
 
     :param x: точка средина фундамента домика
     :param y: нижняя точка фундамента домика
-    :param height_Roof: высота roof
+    :param height_roof:
     :param width: ширина фундамента домика
     :return:
     """
@@ -57,10 +57,10 @@ def house(x, y, heigh, width):
     print(f'начальные данные x,y,height,width {x, y, heigh, width}')
     height_fund = int(0.05 * heigh)
     height_wall = int(0.80 * heigh)
-    height_Roof = int(0.15 * heigh)
+    height_roof = int(0.15 * heigh)
     house_fund(x, y, height_fund, width)
     house_wall(x, y, height_wall, width)
-    house_roof(x, y, height_Roof, width)
+    house_roof(x, y, height_roof, width)
 
 
 zakaz()
