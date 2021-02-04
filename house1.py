@@ -30,7 +30,8 @@ def house(x, y, heigh, width):
     """
     print(f'начальные данные x,y,height,width {x, y, heigh, width}')
     height_fund = int(0.05 * heigh)
-    height_wall = int(0.95 * width)
+    height_wall = int(0.80 * width)
+    height_Roof = int(0.15 * width)
     house_fund(x, y, height_fund, width)
 
 
