@@ -1,4 +1,4 @@
-from кортеже import tup_user
+from cortege import tup_user
 
 
 def print_name(name: str, n=int):
