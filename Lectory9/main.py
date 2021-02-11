@@ -1,3 +1,15 @@
+class Base:
+    def __init__(self, x):
+        self.x = x
+
+    def show(self):
+        print(f"BASE {self.x}")
+
+
+class Derivative(Base):
+    def __init__(self, name):
+        super().__init__(20)  # явный вызов констркутора
+        self.name = name
 
 
 def print_hi(name):
