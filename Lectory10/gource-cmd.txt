@@ -6,4 +6,4 @@ gource {{path/to/repository}}  -{{width}}x{{height}}  --title {{title}}
 
 командная строка CMD
 
-gource D:\PYTON\MFTI -1920x1080 -f --title "MY VIDEO PROJECT"
+gource D:\PYTON\MFTI -1920x1080 -f --title "MY VIDEO PROJECT" --utf-8
