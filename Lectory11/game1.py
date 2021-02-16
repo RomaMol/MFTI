@@ -95,7 +95,8 @@ class GameWindow:
                 if event.type == pygame.QUIT:
                     finished = True
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    x, y = event.x, event.y
+                    mouse_pos = pygame.mouse.get_pos()
+                    x, y = mouse_pos
                     if self._field_widget.check_cords_correct(x, y):
                         i, j = self._field_widget.get_coords(x, y)
                         self._game_round_manager.handle_click(i, j)
