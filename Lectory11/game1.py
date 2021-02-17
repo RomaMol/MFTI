@@ -29,7 +29,7 @@ class GameRoundManager:
         self.game_field = GameField()
 
     def handle_click(self, i, j):
-        """Главный цикл игры"""
+        """игрок делает клик на поле"""
         player = self._players[self._current_player]
         # игрок делает клик на поле
         print(f"clock_hang {i, j}")
@@ -60,7 +60,7 @@ class GameFieldView:
         return True
 
     def get_coords(self, x, y):
-        return 0, 0
+        return x, y
 
 
 class GameWindow:
@@ -97,6 +97,7 @@ class GameWindow:
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
                     x, y = mouse_pos
+                    
                     if self._field_widget.check_cords_correct(x, y):
                         i, j = self._field_widget.get_coords(x, y)
                         self._game_round_manager.handle_click(i, j)
