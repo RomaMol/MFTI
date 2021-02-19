@@ -106,6 +106,7 @@ class GameWindow:
 
 def main():
     """Запуск программы"""
+
     window = GameWindow()
     window.mainloop()
     print("Game OVER!!!")
