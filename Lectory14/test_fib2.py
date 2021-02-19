@@ -1,7 +1,7 @@
-import fib
+from Lectory14 import fib
 
 final_result = True
-test_list = [(0, 0), (1, 1), (2, 1), (5, 5), ]
+test_list = [(0, 0), (1, 1), (2, 1), (3, 2), (5, 3)]
 
 for n, answer in test_list:
     result = fib.fib(n)
