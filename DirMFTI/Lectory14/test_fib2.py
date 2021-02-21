@@ -1,4 +1,4 @@
-from Lectory14 import fib
+from DirMFTI.Lectory14 import fib
 
 final_result = True
 test_list = [(0, 0), (1, 1), (2, 1), (3, 2), (5, 3)]

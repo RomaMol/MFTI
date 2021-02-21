@@ -1,6 +1,6 @@
 import unittest
 
-from Lectory14.fib import fib
+from DirMFTI.Lectory14.fib import fib
 
 
 class TestFib(unittest.TestCase):

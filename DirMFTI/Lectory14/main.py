@@ -1,5 +1,5 @@
 # Опережающее тестирование
-from Lectory14 import fib2, fib
+from DirMFTI.Lectory14 import fib, fib2
 
 
 def main():
