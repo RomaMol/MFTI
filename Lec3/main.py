@@ -9,8 +9,8 @@ class House:
 
     def __init__(self, x=0, y=0, a=0, b=0):
         """открытые и закрытые атрибуты
-        self.x   - открытые
-        self.__x - закрытые
+        self.x   - открытые PUBLIC
+        self.__x - закрытые PRIVATE
         """
         self.x = x
         self.y = y
@@ -18,12 +18,12 @@ class House:
         self.__a = a
         self.__b = b
 
-    def setCor(self, a=0, b=0):
+    def setCor(self, a=0, b='0'):
         """доступ к закрытым атрибутам устанавливаем значение
         проверяем причастность к типу
         """
         if (isinstance(a, int) or isinstance(a, float)) and \
-                (isinstance(b, int) or isinstance(b, float)):
+                (isinstance(b, str) or isinstance(b, float)):
             self.__a = a
             self.__b = b
         else:
