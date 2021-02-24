@@ -10,22 +10,27 @@ class Rectangle_user:
     def fun()  - методы == функции
     """
 
-    def __init__(self, x=None, y=None):
+    width = 0
+    length = 0
+
+    def __init__(self, x=0, y=0):
         """
         данные (свойства) напрямую доступны для экземпляра cordX = x  экземпляр.cordX
         """
+        Rectangle_user.length = x
+        Rectangle_user.width = y
 
-        self.length = x
-        self.width = y
-
-    def perimeter(self):
+    @staticmethod  # декоратор статического метода -- нет необходимости в self
+    def perimeter():
         """Rectangle perimeter  """
-        perimeter = (self.length + self.width) * 2
+        perimeter = (Rectangle_user.length + Rectangle_user.width) * 2
         return perimeter
 
-    def area(self):
+    @staticmethod  # декоратор статического метода -- нет необходимости в self
+    def area():
         """Rectangle area """
-        return self.length * self.width
+
+        return Rectangle_user.length * Rectangle_user.width
 
 
 h1 = Rectangle_user(10, 12)
@@ -34,6 +39,4 @@ h1 = Rectangle_user(10, 12)
 # print()
 print("perimeter : ", h1.perimeter())
 print()
-print("area : ", h1.area())
-
-
+print("area : ", Rectangle_user.area())
