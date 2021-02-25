@@ -4,7 +4,7 @@
 # --- создаине class rectangle--
 
 
-class Rectangle_user:
+class RectangleUser:
     """Класс существительное с большой буквы
     x = 1 y = 1  атрибуты == данные
     def fun()  - методы == функции
@@ -17,26 +17,30 @@ class Rectangle_user:
         """
         данные (свойства) напрямую доступны для экземпляра cordX = x  экземпляр.cordX
         """
-        Rectangle_user.length = x
-        Rectangle_user.width = y
+        RectangleUser.length = x
+        RectangleUser.width = y
 
     @staticmethod  # декоратор статического метода -- нет необходимости в self
     def perimeter():
         """Rectangle perimeter  """
-        perimeter = (Rectangle_user.length + Rectangle_user.width) * 2
+        perimeter = (RectangleUser.length + RectangleUser.width) * 2
         return perimeter
 
     @staticmethod  # декоратор статического метода -- нет необходимости в self
     def area():
-        """Rectangle area """
+        """Rectangle area
+        обращение в статическом методе идет по имени класса
+        """
 
-        return Rectangle_user.length * Rectangle_user.width
+        return RectangleUser.length * RectangleUser.width
 
 
-h1 = Rectangle_user(10, 12)
+h1 = RectangleUser(10, 12)
+print("perimeter h1 : ", h1.perimeter())
+h2 = RectangleUser(3, 3)
 # print("Введите длину прямоугольника: ", input(h1.length))
 # print("Введите ширину прямоугольника: ", input(h1.width))
 # print()
-print("perimeter : ", h1.perimeter())
+print("perimeter h2 : ", h1.perimeter())
 print()
-print("area : ", Rectangle_user.area())
+print("area : ", RectangleUser.area())

@@ -13,7 +13,10 @@ class House:
     __instance = None
 
     def __new__(cls, *args, **kwargs):
-        "Перегруженный метод для создания единственного экземпляра"
+        """Перегруженный метод для создания единственного экземпляра
+        super(House, cls).__new__(cls)  -- создали экземпляр класса
+        cls.__instance == присвоили экземпляр класса
+        """
         if not isinstance(cls.__instance, cls):
             cls.__instance = super(House, cls).__new__(cls)
         else:
