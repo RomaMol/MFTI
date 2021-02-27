@@ -71,6 +71,6 @@ class Line1(Style, Position):
 l1 = Line(Point(0, 0), Point(300, 300))
 print()
 l1.draw_line()
-l2 = Line1(Point(0, 0), Point(300, 300))# необходимо помнить последовательность классов
+l2 = Line1("green",1, Point(0, 0), Point(300, 300))# необходимо помнить последовательность классов
 print()
 l2.draw_line()

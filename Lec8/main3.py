@@ -27,30 +27,31 @@ class Point:
 class Position:
     """Класс позиция координаты"""
 
-    def __init__(self, sp: Point, ep: Point, *args):
+    def __init__(self, ):
         print(" конструктора  класса Position  def __init__")
-        self._sp = sp
-        self._ep = ep
-        super().__init__(*args)
+        super().__init__()
 
 
 class Style:
     """Класс стили """
 
-    def __init__(self, color: str = "red", wight: int = 1, *args):
+    def __init__(self, ):
         print(" конструктора  класса Style  def __init__ ")
-
-        self._color = color
-        self._wight = wight
-        super().__init__(*args)
+        super().__init__()
 
 
 class Line(Position, Style):
     """'этот класс наследует координаты x=0, y=0 из класса Point
-    def __init__ наследует у класса  Prop
-    плохая практика вызыва класс Prop.__init__(self, *args) для переопределения
-    возможны ошибки лучьше использовать метод супер  super()
+         создаем атрибуты из классов  Position, Style
     """
+
+    def __init__(self, sp: Point, ep: Point, color: str = "red", wight: int = 1):
+        print(" конструктора  класса class Line(Position, Style)  __init_")
+        self._sp = sp
+        self._ep = ep
+        self._color = color
+        self._wight = wight
+        super().__init__()
 
     def draw_line(self):
         print(f'Рисуем линию : {self._sp},{self._ep},{self._color},{self._wight}')
@@ -63,6 +64,13 @@ class Line1(Style, Position):
     возможны ошибки лучьше использовать метод супер  super()
     """
 
+    def __init__(self, sp: Point, ep: Point, color: str = "red", wight: int = 1):
+        print(" конструктора  класса class Line(Position, Style)  __init_")
+        self._sp = sp
+        self._ep = ep
+        self._color = color
+        self._wight = wight
+        super().__init__()
 
     def draw_line(self):
         print(f'Рисуем линию : {self._sp},{self._ep},{self._color},{self._wight}')
@@ -71,6 +79,11 @@ class Line1(Style, Position):
 l1 = Line(Point(0, 0), Point(300, 300))
 print()
 l1.draw_line()
-l2 = Line1(Point(0, 0), Point(300, 300))# необходимо помнить последовательность классов
+print()
+print()
+l2 = Line1(Point(40, 40), Point(200, 200))  # необходимо помнить последовательность классов
 print()
 l2.draw_line()
+print()
+print(Line.__mro__)  # Дерево списка наследования class Line
+# (<class '__main__.Line'>, <class '__main__.Position'>, <class '__main__.Style'>, <class 'object'>)
