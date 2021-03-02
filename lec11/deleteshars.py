@@ -1,4 +1,4 @@
-#   https://www.youtube.com/watch?v=-ZY0KHGOQoY
+#   https://www.youtube.com/watch?v=-ZY0KHGOQoY&list=PLA0M1Bcd0w8zo9ND-7yEFjoHBg_fzaQ-B&index=11
 #   ООП Python 3 #11: функторы и менеджеры контекста
 
 class StripChars:
