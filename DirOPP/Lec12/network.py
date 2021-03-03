@@ -43,8 +43,9 @@ class NetWork:
         # проводим сигнал по нейронной сети
         for i in range(1, self.__nlayer):
             for neuro in self.__layers[i]:  # перебираем нейроны i-го слоя
-                v = [(link.n_in.value * link.w) for link in neuro.list_in]
-                neuro.value = neuro.act(sum(v))
+                v = [(link.n_in.value * link.w) for link in neuro.list_in] # v = (входной нейрон * вес связи)
+                print(f"v {v}", sep="\n")
+                neuro.value = neuro.act(sum(v))  #  act(v) = 1 / (1 + math.exp(-v))
 
     def output(self):
         return [neuro.value for neuro in self.__layers[-1]]
