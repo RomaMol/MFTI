@@ -50,7 +50,7 @@ class House:
         :return:
         """
         if item == "_House__x":
-            return "privat peremen"
+            return "privat penmen"
         else:
             return object.__getattribute__(self, item)
 
