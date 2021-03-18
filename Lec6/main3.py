@@ -14,12 +14,13 @@ for i in range(N):
         print(A[i][j], end="")
     print()
 
-
-S=0; M=10; N=5
-for i in range(1,N+1):
+S = 0
+M = 10
+N = 5
+for i in range(1, N + 1):
     print("i", i)
-    for j in range(1,M+1):
-        print("j",j)
-        S += i*j
-        print("S += i*j ",S)
+    for j in range(1, M + 1):
+        print("j", j)
+        S += i * j
+        print("S += i*j ", S)
 print(S)
