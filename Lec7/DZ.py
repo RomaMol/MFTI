@@ -13,13 +13,20 @@ for x in text:
 print(f'подсчет буквы "а" количество = {kol_vo}')
 
 #  удаление из строки "аb"
-bad_chars = 'а'
-
-for chars in text:
-    print('chars', chars)
-    if chars == bad_chars :
-        print("chars == bad_chars", chars)
-    #print('chars', chars)
+bad_chars1 = 'a'
+bad_chars2 = 'b'
+new_text = []
+for number in range(0, len(text)+1):
+    chars = text[number]
+    # print('chars', chars)
+    if chars == 'a':
+        print("chars == bad_chars a", chars)
+        new_text = new_text.append()
+        if text[number + 1] == 'b':
+            print("chars == bad_chars b", chars)
+            new_text = new_text.append()
+    new_text = new_text.append()
+    print('chars', chars, new_text)
 
 # for bad_chars in text:
 #     print(bad_chars)
