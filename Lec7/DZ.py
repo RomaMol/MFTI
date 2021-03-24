@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import re
+
 text = "abrakadabra"
 
 # подсчет буквы "а"
@@ -12,7 +13,13 @@ for x in text:
 print(f'подсчет буквы "а" количество = {kol_vo}')
 
 #  удаление из строки "аb"
-bad_chars = "аb"
+bad_chars = 'а'
+
+for chars in text:
+    print('chars', chars)
+    if chars == bad_chars :
+        print("chars == bad_chars", chars)
+    #print('chars', chars)
 
 # for bad_chars in text:
 #     print(bad_chars)
