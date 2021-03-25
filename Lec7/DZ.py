@@ -13,24 +13,33 @@ for x in text:
 print(f'подсчет буквы "а" количество = {kol_vo}')
 
 #  удаление из строки "аb"
-bad_chars1 = 'a'
-bad_chars2 = 'b'
+bad_chars = 'ab'
 
-for number in range(0, len(text)):
+new_text = ''
+number = 0
+print("len(text)", len(text))
+while number < len(text):
     print(number)
-    chars = text[number]
-    # print('chars', chars)
-    if chars == 'a':
-        # print("chars == bad_chars a", chars)
-        chars = ''
-        # if number + 1 > len(text):
-        #     break
-        # else:
-        #     if text[number + 1] == 'b':
-        #         # print("chars == bad_chars b", chars)
-        #         chars = ''
+    chars1 = text[number]
+    if number + 1 >= len(text):
+        break
+    else:
+        chars2 = text[number + 1]
+        print("chars1 == bad_chars1[0]", chars1)
+        print("chars2 == bad_chars1[1]", chars2)
+        test = chars1 + chars2
+        print("test = ", test, 'bad_chars = ', bad_chars)
+        if test == bad_chars:
+            number += 1
+            chars1 = ''
+            chars2 = ''
+    if number <= len(text):
+        number += 1
+        new_text = new_text + chars1
+    else:
+        new_text = new_text + chars2
 
-    print('chars', chars)
+    print('chars', chars1, chars2, new_text)
 
 text2 = text.replace("ab", "")
 
