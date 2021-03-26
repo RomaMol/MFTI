@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import re
 
 text = "abrakadabra"
 
@@ -21,7 +20,7 @@ while number < len(text):
     if number + 1 >= len(text):
         chars1 = text[number]
         text1 = text1 + chars1
-        #print("chars1", chars1, "text1", text1)
+        # print("chars1", chars1, "text1", text1)
         break
     else:
         chars1 = text[number]
@@ -50,7 +49,7 @@ while number < len(text):
     if number + 1 >= len(text):
         chars1 = text[number]
         text4 = text4 + chars1
-        #print("chars1", chars1, "text1", text1)
+        # print("chars1", chars1, "text1", text1)
         break
     else:
         chars1 = text[number]
