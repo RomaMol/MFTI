@@ -11,7 +11,7 @@ print(a, '\n', a1)
 x, y = 1, 22
 print(x, y)
 print("len(a) = ", len(a))
-print('a.__sizeof__()', a.__sizeof__(), 'lst.__sizeof__()', lst.__sizeof__())
+print('tuples.__sizeof__()', a.__sizeof__(), 'lst.__sizeof__()', lst.__sizeof__())
 
 b = tuple()
 print('b =tuple() ', b)

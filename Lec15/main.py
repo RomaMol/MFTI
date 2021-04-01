@@ -15,9 +15,11 @@ def gettotalmins(PM, i, j):
         for l in range(-1, 2):
             x = i + k
             y = j + l
+            #print(f'x{x}, y {y}')
             if x < 0 or x >= N or y < 0 or y >= N:
                 continue
             if PM[x * N + y] < 0:
+                #print(PM[x * N + y])
                 boom += 1
     return boom
 
@@ -28,12 +30,17 @@ def creategame(PM):
 
     n = M
     while n > 0:
+        #print("PM", PM)
         i = rnd.randrange(N)  # случайное целое от 0 до  N по горизонтали
         j = rnd.randrange(N)  # случайное целое от 0 до  N по вертикали
-        if PM[i * N + j] != 0:
+        #print("i, j", i,  j)
+        if PM[i * N + j] != 0: # Проверка установлена ли мина на i,j
+            #print('!= 0', PM[i * N + j])
             continue
         else:
+            # установка мины на i,j
             PM[i * N + j] = -1
+            #print('= -1', PM[i * N + j] )
         n -= 1
     # количество мин вокруг клетки
     for i in range(N):
@@ -84,7 +91,7 @@ def isfinish(PM, P):
 def startgames():
     """запуск программы, отрисовывание поля проверка работы"""
     P = [-2] * N * N  # В начале игры все клетки закрыты
-    PM = [0] * N * N  # расстановка мин на поле закрытые мины
+    PM = [0] * N * N  # состояние поля перед расстановкой  мин на поле
     creategame(PM)
     finstate = isfinish(PM, P)
     while finstate > 0:
@@ -92,9 +99,10 @@ def startgames():
         x, y = goplaer()
         P[x * N + y] = PM[x * N + y]
         finstate = isfinish(PM, P)
-
+    return finstate
 
 res = startgames()
+print(res)
 if res == -1:
     print("вы проиграли")
 else:
