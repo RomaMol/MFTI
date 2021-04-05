@@ -23,11 +23,13 @@ a = (-5, 6)
 for x in range(*a):
     print(x, end=" ")
 print()
+
+
 def myfanc(*args):
     print('myfanc(*args)', args)
 
+
 myfanc()
 myfanc(x)
-myfanc(1,3,5)
-myfanc("x",5,"eee")
-
+myfanc(1, 3, 5)
+myfanc("x", 5, "eee")
