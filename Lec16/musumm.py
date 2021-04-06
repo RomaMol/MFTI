@@ -8,23 +8,27 @@
 def mysumm(*args):
     s = 0
     for x in args:
-        s+=x
+        s += x
     return ("summa = ", s)
 
-print(mysumm(1,3,5,3,8,0))
+
+print(mysumm(1, 3, 5, 3, 8, 0))
+
 
 def muslov(**args):
     for name, vavue in args.items():
         print(name, vavue)
 
-muslov(arg1=1,fname="igor", name="serga")
+
+muslov(arg1=1, fname="igor", name="serga")
+
 
 def muslov(*lst, **args):
-    
     for x in lst:
-        print(x , end=" ")
+        print(x, end=" ")
     print()
     for name, vavue in args.items():
         print(name, vavue)
 
-muslov(10,20,45, arg1=1,fname="igor", name="serga")
+
+muslov(10, 20, 45, arg1=1, fname="igor", name="serga")
