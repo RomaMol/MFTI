@@ -1,7 +1,7 @@
 def showelement(lst, fun):
     for x in lst:
         if fun(x):
-            print(x)
+            print(x, end=" ")
 
 
 lst = (1, 2, 3, 4, 5, 6, 7, 8, 9)
