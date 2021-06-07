@@ -16,6 +16,10 @@ c = (sql(x) for x in range(11))
 print(list(b))
 print(list(c))
 
-lst = ("Москва", "Орел","Курск")
+lst = ("Москва", "Орел", "Курск")
 d = map(str.upper, lst)
 print(list(d))
+
+lst1 = ("Москва", "Орал", "Карск")
+g = map(lambda x: x.replace('a', 'A'), lst1)
+print(list(g))
