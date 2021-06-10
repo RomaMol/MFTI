@@ -17,5 +17,6 @@
 try:
     file1 = open('test.txt')
 except FileNotFoundError:
+
     print("Файл ненайден")
 
