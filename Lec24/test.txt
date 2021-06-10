@@ -1,0 +1,2 @@
+test1
+D:/2020-PYTHON/MFTI/Lec24/test.txt
