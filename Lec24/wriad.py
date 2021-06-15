@@ -12,33 +12,43 @@
 # D:/2020-PYTHON/outtest.txt  --> ../outtest.txt
 # D:/2020-PYTHON/2021Corpnet/intest.txt -->  ../2021Corpnet/intest.txt
 
-
-# open('file',mode="r", encoding=None)
 try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read())
+    file1 = open('out.txt', "w", encoding="utf-8")
+    try:
+        file1.write("Hello asferger\n")
+        file1.write("Hello asferger\n")
+        file1.write("Hello asferger\n")
+    finally:
+        file1.close()
+
+except FileNotFoundError:
+    print("Файл ненайден")
+print("-----------------------------------------")
+
+try:
+    file1 = open('out.txt', "a", encoding="utf-8")
+    try:
+        file1.write("Hello \n")
+        file1.write("Hello \n")
+        file1.write("Hello \n")
+    finally:
+        file1.close()
+
 except FileNotFoundError:
     print("Файл ненайден")
 print("-----------------------------------------")
 
 try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    print(file1.read(10))
+    file1 = open('out1.txt', "a+", encoding="utf-8")
+    try:
+        file1.write("Hello \n")
+        file1.write("Hello \n")
+        file1.write("Hello \n")
+        file1.seek(0)
+        print(file1.readlines())
+    finally:
+        file1.close()
 
-except FileNotFoundError:
-    print("Файл ненайден")
-print("-----------------------------------------")
-try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    file1.seek(0)
-    pos = file1.tell()
-    print(pos)
-    print(file1.read(10))
-    file1.seek(0)
-    print(pos)
-    print(file1.read(10))
 except FileNotFoundError:
     print("Файл ненайден")
 print("-----------------------------------------")

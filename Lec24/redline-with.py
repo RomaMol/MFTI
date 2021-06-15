@@ -14,31 +14,14 @@
 
 
 # open('file',mode="r", encoding=None)
+# не надо добавлять закрытие файла, оно происходит самостоятельно
 try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read())
-except FileNotFoundError:
-    print("Файл ненайден")
-print("-----------------------------------------")
-
-try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    print(file1.read(10))
+    # file1 = open('test.txt', encoding="utf-8")
+    with open('test.txt', encoding="utf-8") as file1:
+        print(file1.readlines(), end="")
 
 except FileNotFoundError:
     print("Файл ненайден")
-print("-----------------------------------------")
-try:
-    file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    file1.seek(0)
-    pos = file1.tell()
-    print(pos)
-    print(file1.read(10))
-    file1.seek(0)
-    print(pos)
-    print(file1.read(10))
-except FileNotFoundError:
-    print("Файл ненайден")
+finally:
+    print(file1.closed)
 print("-----------------------------------------")

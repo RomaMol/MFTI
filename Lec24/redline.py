@@ -16,29 +16,32 @@
 # open('file',mode="r", encoding=None)
 try:
     file1 = open('test.txt', encoding="utf-8")
-    print(file1.read())
+    print(file1.readline(), end="")
+    print(file1.readline(), end="")
+    file1.close()
 except FileNotFoundError:
     print("Файл ненайден")
 print("-----------------------------------------")
 
 try:
     file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    print(file1.read(10))
-
+    try:
+        for line in file1:
+            print(line, end="")
+    finally:
+        file1.close()
 except FileNotFoundError:
     print("Файл ненайден")
+print()
 print("-----------------------------------------")
+
 try:
     file1 = open('test.txt', encoding="utf-8")
-    print(file1.read(10))
-    file1.seek(0)
-    pos = file1.tell()
-    print(pos)
-    print(file1.read(10))
-    file1.seek(0)
-    print(pos)
-    print(file1.read(10))
+    try:
+        print(file1.readlines(), end="")
+    finally:
+        file1.close()
 except FileNotFoundError:
     print("Файл ненайден")
+print()
 print("-----------------------------------------")

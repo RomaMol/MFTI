@@ -1,2 +1,4 @@
-test1
+start
+file test.txt
 D:/2020-PYTHON/MFTI/Lec24/test.txt
+end
