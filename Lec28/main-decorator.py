@@ -51,7 +51,7 @@ def getfastnod(aa, bb):
 # print(f'a = {a}, b ={b}, поиск наименьший общий делитель nod = {nod}')
 
 
-res = getnod(10000000, 3)
+res = getnod(100000000, 3)
 res2 = getfastnod(1000000000000000, 44)
 
 print(f'Результат вычисления getnod {res}')
