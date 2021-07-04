@@ -21,7 +21,7 @@ def modelist():
             if isinstance(g, list):
                 for i, x in enumerate(g):
                     # print(f'element2 {i, x}')
-                    if i == n:  # порядковый элемент списка   [1, 2, 0]
+                    if i == n:  # порядковый элемент списка -  индекс  [1, 2, 0]
                         g[i] = 0  # изменяем соответствующее значение  с 3 на 0 [1, 2, 0]
                         # print("g = ", g)
                     i += 1
