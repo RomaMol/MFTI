@@ -8,6 +8,5 @@ import mypakege
 print(dir(mypakege))
 
 print(mypakege.Name)
-import mypakege.myonemodule
 
-a = mypakege.myonemodule.onefun()
+a = DirBasePython.Lec27.mypakege.myonemodule.onefun()
