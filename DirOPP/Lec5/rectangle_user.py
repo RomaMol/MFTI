@@ -32,6 +32,11 @@ class Rectangle_user:
 
         return Rectangle_user.length * Rectangle_user.width
 
+    def area2(self):
+        """Rectangle area """
+
+        return Rectangle_user.length * Rectangle_user.width
+
 
 h1 = Rectangle_user(10, 12)
 # print("Введите длину прямоугольника: ", input(h1.length))
@@ -40,3 +45,5 @@ h1 = Rectangle_user(10, 12)
 print("perimeter : ", h1.perimeter())
 print()
 print("area : ", Rectangle_user.area())
+print()
+print("area2 : ", Rectangle_user.area())
