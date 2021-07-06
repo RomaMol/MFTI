@@ -37,8 +37,8 @@ class Cat:
 cat1 = Cat("vasia")
 print(cat1.__str__())
 print(cat1.__repr__())
-
-
+print(cat1)
+print(str(cat1))
 
 class Point:
     """Класс точка с координатами в плоскости  Х У """
