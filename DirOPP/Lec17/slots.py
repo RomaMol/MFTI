@@ -5,6 +5,7 @@
 #    17. ООП Python 3: коллекция __slots__ для классов
 import timeit
 
+
 class Point:
     """ в экземпляр класс можно добавить ещё координату """
 
@@ -39,6 +40,7 @@ class Point2d:
         self.x += 1
         del self.y
         self.y = 0
+
 
 pt2 = Point2d(1, 2)
 print(f"pt2.__dict__ {pt2.__slots__}")

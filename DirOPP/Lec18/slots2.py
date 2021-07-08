@@ -35,7 +35,8 @@ print(f' lends = {pt.lends}, x = {pt.x}, y = {pt.y}')
 
 class Point3d(Point2d):
     """Новый класс наследуется от класса class Point2d"""
-    #__slots__ = "z"
+
+    __slots__ = "z"
 
     def __init__(self, x, y, z):
         """инициализация- описание переменных используемых классом"""
@@ -43,8 +44,8 @@ class Point3d(Point2d):
         self.z = z
 
 
-pt3 = Point3d
-pt3.z = 3
-print(f"pt3.__dict__ = {pt3.__dict__}, pt3.__slots__= {pt3.__slots__}")
-pt4 = Point3d(10,20,30)
+# pt3 = Point3d
+# pt3.z = 3
+# print(f"pt3.__dict__ = {pt3.__dict__}, pt3.__slots__= {pt3.__slots__}")
+pt4 = Point3d(10, 20, 30)
 print(f"pt4.x = {pt4.x}, pt4.y= {pt4.y}, pt4.z= {pt4.z}")
