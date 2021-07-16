@@ -28,6 +28,14 @@ class MyFrame(wx.Frame):
         fileMenu.Append(wx.ID_OPEN, '&Открыть\tCtrl+O')
         fileMenu.Append(wx.ID_SAVE, '&Сохранить\tCtrl+S')
 
+        fileMenu.AppendSeparator()
+
+        expMenu = wx.Menu()
+
+        expMenu.Append(wx.ID_ANY, "Экспорт изображения")
+        expMenu.Append(wx.ID_ANY, "Экспорт видео")
+        expMenu.Append(wx.ID_ANY, "Экспорт данных")
+
         item = wx.MenuItem(fileMenu, ID_EXIT, "Выход\tCtrl+Q", "Выход из приложения")
         item.SetBitmap(wx.Bitmap('menu/exit_icon_176956.png'))
         fileMenu.Append(item)
