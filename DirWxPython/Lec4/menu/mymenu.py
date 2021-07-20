@@ -49,7 +49,7 @@ class MyFrame(wx.Frame):
         menubar.Append(viewMenu, "&Вид")
         self.SetMenuBar(menubar)
 
-        self.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню  # подключение Контекстное меню
+        self.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню
         self.Bind(wx.EVT_TOOL, self.onQuit, br_quit)
 
     def OnRightDown(self, event):

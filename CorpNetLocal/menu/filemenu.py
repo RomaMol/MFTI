@@ -58,8 +58,4 @@ class AppFileMenu(wx.Menu):
     def onQuit(self, event):
         self.parent.Close()
 
-    # def onStatus(self, event):
-    #     if self.vStatus.IsChecked():
-    #         print("Показать статусную строку")
-    #     else:
-    #         print("Скрыть статусную строку")
+
