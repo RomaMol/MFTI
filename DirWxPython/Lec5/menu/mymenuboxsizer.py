@@ -14,8 +14,13 @@ ID_EXIT = 1
 
 
 class MyFrame(wx.Frame):
-    def __init__(self, parent, title):
+    def __init__(self, parent, title, my_icon=None):
         super().__init__(parent, title=title)
+
+        ico = wx.Icon('image/exit16.png', wx.BITMAP_TYPE_ICO)
+        self.SetIcon(wx.Icon(ico))
+        # ico = my_icon.python.GetIcon()
+        # self.SetIcon(ico)
 
         menubar = wx.MenuBar()  # создание менюбара
         fileMenu = AppFileMenu(self)  # создания вкладки меню fileMenu ; ITEM_NORMAL
@@ -26,6 +31,8 @@ class MyFrame(wx.Frame):
 
         # --------------создание панели для размещения элементов----------------------------
         panel = wx.Panel(self)  # задать панель для размещения  сайзера и элементов
+
+
         # ------------замена шрифта на панели------------------------------------------------
         font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
         font.SetPointSize(12)

@@ -14,6 +14,9 @@ bottomborder = 20
 class MyFrame(wx.Frame):
     def __init__(self, parent, title):
         super().__init__(parent, title=title)
+        # -----------иконка слева от названия программы----------------
+        ico = wx.Icon('image/253.ico', wx.BITMAP_TYPE_ICO)
+        self.SetIcon(wx.Icon(ico))
         # -----------верхнее меню и Контекстное меню----------------
         menubar = wx.MenuBar()  # создание менюбара
         filemenu = AppFileMenu(self)
@@ -23,14 +26,15 @@ class MyFrame(wx.Frame):
         menubar.Append(configmenu, "&Настройка")
         self.SetMenuBar(menubar)
 
-
         # -----------бокс  меню----------------
         panel = wx.Panel(self)
 
         font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
         font.SetPointSize(12)
         panel.SetFont(font)
+
         verbox = wx.BoxSizer(wx.VERTICAL)  # вертикальное расположение боксов
+
         # -------------------- 1 ----------------------
         h1 = wx.BoxSizer(wx.HORIZONTAL)
         st1 = wx.StaticText(panel, label='Введите IP адрес')
@@ -91,3 +95,12 @@ class MyFrame(wx.Frame):
 
     def OnRightDown(self, event):
         self.PopupMenu(self.ctx, event.GetPosition())
+        print(event.GetPosition())
+
+
+if __name__ == '__main__':
+    CorpNet = wx.App()
+    window = MyFrame(None, title="CorpNet-Local", )
+    window.Center()
+    window.Show()
+    CorpNet.MainLoop()
