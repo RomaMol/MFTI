@@ -91,6 +91,27 @@ class AppFileMenu(wx.Menu):
             return
 
     def open_file_zip(self, event):
-        pass
+        """ Открывает путь к файлу ZIP """
+
+        frame = wx.Frame(None, -1, 'excel.exe')
+        frame.SetDimensions(0, 0, 200, 50)
+
+        openFileDialog = wx.FileDialog(frame, "Open", "", "",
+                                       "zip files(*.zip)| *.zip|"
+                                       "rar files| *.rar|"
+                                       "all files| *.*",
+                                       wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+
+        openFileDialog.ShowModal()
+        filename = openFileDialog.GetPath()
+        print(openFileDialog.GetPath())
+        openFileDialog.Destroy()
+
+        if filename:
+            os.startfile(filename)
+        else:
+            return
+
+
     def onQuit(self, event):
         self.parent.Close()
