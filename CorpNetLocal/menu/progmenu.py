@@ -74,11 +74,12 @@ class MyFrame(wx.Frame):
 
         panel.SetSizer(box)  # вертикальное расположение боксов отражение на экране
 
-        self.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню
+        panel.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню
 
     def OnRightDown(self, event):
+        #print("Нажатие на правую кнопку мыши")
         self.PopupMenu(self.ctx, event.GetPosition())
-        print(event.GetPosition())
+        #print(event.GetPosition())
 
 
 if __name__ == '__main__':
