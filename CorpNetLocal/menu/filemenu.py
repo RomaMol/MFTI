@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
+import os
 import subprocess
-from tkinter import filedialog
 
 import wx
 
@@ -37,25 +37,60 @@ class AppFileMenu(wx.Menu):
         exit_prog.SetBitmap(wx.Bitmap('image/exit16.png'))
         self.Append(exit_prog)
 
-        self.Bind(wx.EVT_MENU, self.menu_up_open_file_txt, id=ID_TXT)
+        self.Bind(wx.EVT_MENU, self.open_file_txt, id=ID_TXT)
+        self.Bind(wx.EVT_MENU, self.open_file_excel, id=ID_EXCEL)
+        self.Bind(wx.EVT_MENU, self.open_file_zip, id=ID_ZIP)
 
         self.Bind(wx.EVT_MENU, self.onQuit, id=ID_EXIT)
 
-    def menu_up_open_file_txt(self, event):
+    def open_file_txt(self, event):
         """ открывает найденый файл в текстовом редакторе
             если файл не выбран то программа блокнот не запускается !!!
 
         """
-        filename = filedialog.askopenfilename(initialdir=" ",
-                                              title="Открыть файл",
-                                              filetypes=(("txt files", "*.txt"), ("all files", "*.*"),
-                                                         ("py files", "*.py")))
+        frame = wx.Frame(None, -1, 'notepad.exe')
+        frame.SetDimensions(0, 0, 200, 50)
+
+        openFileDialog = wx.FileDialog(frame, "Open", "", "",
+                                       "text files (*.txt)|*.txt |all files| *.*",
+                                       wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+
+        openFileDialog.ShowModal()
+        filename = openFileDialog.GetPath()
+        print(openFileDialog.GetPath())
+        openFileDialog.Destroy()
+
         if filename:
             subprocess.Popen("notepad.exe " + filename, shell=True)
         else:
             return
 
+    def open_file_excel(self, event):
+        """ открывает найденый файл в текстовом редакторе
+            если файл не выбран то программа excel не запускается !!!
+        """
+
+        frame = wx.Frame(None, -1, 'excel.exe')
+        frame.SetDimensions(0, 0, 200, 50)
+
+        openFileDialog = wx.FileDialog(frame, "Open", "", "",
+                                       "Книга excel (*.xlsx)| *.xlsx|"
+                                       "Книга excel 97-2003 | *.xls|"
+                                       "all files| *.*",
+                                       wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+
+        openFileDialog.ShowModal()
+        filename = openFileDialog.GetPath()
+        print(openFileDialog.GetPath())
+        openFileDialog.Destroy()
+
+
+        if filename:
+            os.startfile(filename)
+        else:
+            return
+
+    def open_file_zip(self, event):
+        pass
     def onQuit(self, event):
         self.parent.Close()
-
-
