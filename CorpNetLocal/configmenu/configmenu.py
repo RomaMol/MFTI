@@ -2,6 +2,8 @@
 # -*- coding: utf8 -*-
 import wx
 
+from CorpNetLocal.configmenu.menuconfig1 import MyFrame1
+
 
 class AppConfigMenu(wx.Menu):
 
@@ -19,7 +21,12 @@ class AppConfigMenu(wx.Menu):
 
     def config(self, event):
         print("list config")
-        pass
+        menuconfig1 = wx.App()
+        window1 = MyFrame1(None, title="Настройка", )
+        window1.Center()
+        window1.Show()
+        menuconfig1 .MainLoop()
+
 
     def help(self, event):
         print("list help")

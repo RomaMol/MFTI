@@ -14,7 +14,7 @@ def the_first_run():
 
     one = os.path.exists(conf_file_ini[0])
 
-    if one  is True:
+    if one is True:
         return
 
     for file in conf_file_ini:

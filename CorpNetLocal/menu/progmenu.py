@@ -3,9 +3,9 @@
 
 import wx
 
-from CorpNetLocal.menu.configmenu import AppConfigMenu
+from CorpNetLocal.configmenu.configmenu import AppConfigMenu
 from CorpNetLocal.menu.contextmenu import AppContextMenu
-from CorpNetLocal.menu.filemenu import AppFileMenu
+from CorpNetLocal.configmenu.filemenu import AppFileMenu
 
 boottomsize = (90, 30)
 bottomborder = 20
@@ -43,6 +43,7 @@ class MyFrame(wx.Frame):
         # -------------------- 2 ----------------------
         h2 = wx.BoxSizer(wx.HORIZONTAL)
         tc = wx.TextCtrl(panel, size=(220, 30))
+
         h2.Add(tc, flag=wx.CENTER, border=8)
         box.Add(h2, flag=wx.CENTRE | wx.BOTTOM, border=10)
         # # -------------------- 3----------------------
@@ -75,11 +76,18 @@ class MyFrame(wx.Frame):
         panel.SetSizer(box)  # вертикальное расположение боксов отражение на экране
 
         panel.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню
+        self.Bind(wx.EVT_BUTTON, self.button7, id=button7.GetId())
 
     def OnRightDown(self, event):
-        #print("Нажатие на правую кнопку мыши")
+        # print("Нажатие на правую кнопку мыши")
         self.PopupMenu(self.ctx, event.GetPosition())
-        #print(event.GetPosition())
+        # print(event.GetPosition())
+
+    def button7(self, event):
+
+        print("PING")
+
+
 
 
 if __name__ == '__main__':

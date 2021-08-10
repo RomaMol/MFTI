@@ -3,9 +3,9 @@
 
 import wx
 
-from CorpNetLocal.menu.configmenu import AppConfigMenu
+from CorpNetLocal.configmenu.configmenu import AppConfigMenu
 from CorpNetLocal.menu.contextmenu import AppContextMenu
-from CorpNetLocal.menu.filemenu import AppFileMenu
+from CorpNetLocal.configmenu.filemenu import AppFileMenu
 
 boottomsize = (90, 30)
 bottomborder = 20
