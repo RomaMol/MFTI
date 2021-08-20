@@ -24,8 +24,9 @@ class AppConfigMenu(wx.Menu):
         menuconfig1 = wx.App()
         window1 = MyFrame1(None, title="Настройка", )
         window1.Center()
-        window1.Show()
-        menuconfig1 .MainLoop()
+        #window1.ShowModal()
+        menuconfig1.MainLoop()
+
 
 
     def help(self, event):

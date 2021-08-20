@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-#  https://youtu.be/dSBY6F8qsmM
-#  wxPython #8: примеры событий, назначение id виджетам
+#  https://www.youtube.com/watch?v=90-JemgyMlU
+#  wxPython #9: стандартные диалоговые окна
 # wx.MessageBox(message, caption=MessageBoxCaptionStr, style=OK|CENTRE, parent=None, x=DefaultCoord, y=DefaultCoord)
 #
 # message – сообщение внутри окна;
