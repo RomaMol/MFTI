@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 import wx
+from wx import DEFAULT_DIALOG_STYLE
 
-from CorpNetLocal.configmenu.menuconfig1 import MyFrame1
+from CorpNetLocal.configmenu.menuconfig1 import MyDialog
 
 
 class AppConfigMenu(wx.Menu):
@@ -15,19 +16,15 @@ class AppConfigMenu(wx.Menu):
         helps = self.Append(wx.ID_ANY, '&Помощь\tCtrl+H')
         o_pro = self.Append(wx.ID_ANY, 'О программе')
 
-        self.Bind(wx.EVT_MENU, self.config, id=config.GetId())
+        self.Bind(wx.EVT_MENU, self.onDialog, id=config.GetId())
         self.Bind(wx.EVT_MENU, self.help, id=helps.GetId())
         self.Bind(wx.EVT_MENU, self.o_pro, id=o_pro.GetId())
 
-    def config(self, event):
-        print("list config")
-        menuconfig1 = wx.App()
-        window1 = MyFrame1(None, title="Настройка", )
-        window1.Center()
-        #window1.ShowModal()
-        menuconfig1.MainLoop()
-
-
+    def onDialog(self, e):
+        dlg = MyDialog(self.parent, title="Конфигурация")
+        dlg.Center()
+        dlg.ShowModal()
+        dlg.Destroy()
 
     def help(self, event):
         print("list help")

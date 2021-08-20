@@ -7,9 +7,14 @@ boottomsize = (100, 30)
 bottomborder = 20
 
 
-class MyFrame1(wx.Frame):
-    def __init__(self, parent, title):
-        super().__init__(parent, title=title, size=(800, 400))
+class MyDialog(wx.Dialog):
+    def __init__(self, parent, *args, **kwargs):
+        super().__init__(parent, *args, **kwargs)
+        self.SetSize(800, 400)
+
+        # class MyFrame1(wx.Frame):
+        #     def __init__(self, parent, title):
+        #         super().__init__(parent, title=title, size=(800, 400))
 
         # -----------иконка слева от названия программы----------------
         ico = wx.Icon('image/253.ico', wx.BITMAP_TYPE_ICO)
