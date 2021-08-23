@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 
 import wx
+from wx import ID_ANY
 
 from CorpNetLocal.configmenu.configmenu import AppConfigMenu
 from CorpNetLocal.menu.contextmenu import AppContextMenu
@@ -42,9 +43,9 @@ class MyFrame(wx.Frame):
         box.Add(h1, flag=wx.CENTRE | wx.BOTTOM, border=10)
         # -------------------- 2 ----------------------
         h2 = wx.BoxSizer(wx.HORIZONTAL)
-        tc = wx.TextCtrl(panel, size=(220, 30))
+        self.tc = wx.TextCtrl(panel, id=ID_ANY, size=(220, 30))
 
-        h2.Add(tc, flag=wx.CENTER, border=8)
+        h2.Add(self.tc, flag=wx.CENTER, border=8)
         box.Add(h2, flag=wx.CENTRE | wx.BOTTOM, border=10)
         # # -------------------- 3----------------------
         h3 = wx.BoxSizer(wx.HORIZONTAL)
@@ -76,19 +77,26 @@ class MyFrame(wx.Frame):
         panel.SetSizer(box)  # вертикальное расположение боксов отражение на экране
 
         panel.Bind(wx.EVT_RIGHT_DOWN, self.OnRightDown)  # подключение Контекстное меню
+        self.Bind(wx.EVT_BUTTON, self.button2, id=button2.GetId())
         self.Bind(wx.EVT_BUTTON, self.button7, id=button7.GetId())
 
     def OnRightDown(self, event):
-        # print("Нажатие на правую кнопку мыши")
+        """Нажатие на правую кнопку мыши"""
         self.PopupMenu(self.ctx, event.GetPosition())
-        # print(event.GetPosition())
+
+
+    def button2(self, event):
+        """Нажатие на  кнопку ПОИСК"""
+
+        tc1 = self.tc.GetValue()
+
+        print("ПОИСК",  tc1)
 
     def button7(self, event):
+        """Нажатие на  кнопку PING!!!"""
+        tc1 = self.tc.GetValue()
 
-        print("PING")
-
-
-
+        print("PING", tc1)
 
 if __name__ == '__main__':
     CorpNet = wx.App()

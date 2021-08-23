@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 import wx
-from wx import DEFAULT_DIALOG_STYLE
+
 
 from CorpNetLocal.configmenu.menuconfig1 import MyDialog
 

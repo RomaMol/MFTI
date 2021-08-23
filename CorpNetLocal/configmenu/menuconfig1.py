@@ -3,18 +3,20 @@
 
 import wx
 
-boottomsize = (100, 30)
-bottomborder = 20
+bottom_size = (100, 30)  # Размер кнопки
+bottom_border = 20
+
+size_config = (800, 350)  # размер листа конфигурации ширинаХвысота
+
+name_button = 'Открыть'
+name_string = ["Путь к Excel файлу:", "Путь к Putty.exe:", "Путь к папке с фотографиями:", "Путь к архиву с паролями:",
+               "Имя столбца таблицы:", "Пароль архива:"]
 
 
 class MyDialog(wx.Dialog):
     def __init__(self, parent, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
-        self.SetSize(800, 400)
-
-        # class MyFrame1(wx.Frame):
-        #     def __init__(self, parent, title):
-        #         super().__init__(parent, title=title, size=(800, 400))
+        self.SetSize(size_config)
 
         # -----------иконка слева от названия программы----------------
         ico = wx.Icon('image/253.ico', wx.BITMAP_TYPE_ICO)
@@ -24,45 +26,40 @@ class MyDialog(wx.Dialog):
         panel = wx.Panel(self)
 
         font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
-        font.SetPointSize(12)
+        font.SetPointSize(10)
         panel.SetFont(font)
 
         box = wx.BoxSizer(wx.VERTICAL)  # вертикальное расположение боксов
         # ----------------------------------------------------------
-        hbox = wx.BoxSizer(wx.HORIZONTAL)
-        # hbox = wx.BoxSizer()
+        h_box = wx.BoxSizer(wx.HORIZONTAL)
 
         fb = wx.FlexGridSizer(7, 3, 10, 10)
-        fb.AddMany([(wx.StaticText(panel, label="Путь к Excel файлу:")),
+        fb.AddMany([(wx.StaticText(panel, label=name_string[0])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="Путь к Putty.exe:")),
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
+                    (wx.StaticText(panel, label=name_string[1])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="Путь к папке с фотографиями:")),
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
+                    (wx.StaticText(panel, label=name_string[2])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="Имя столбца таблицы:")),
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
+                    (wx.StaticText(panel, label=name_string[3])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="Путь к архиву с паролями:")),
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
+                    (wx.StaticText(panel, label=name_string[4])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="Пароль архива:")),
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
+                    (wx.StaticText(panel, label=name_string[5])),
                     (wx.TextCtrl(panel), wx.ID_ANY, wx.EXPAND),
-                    (wx.Button(panel, label='Открыть', size=boottomsize)),
-                    (wx.StaticText(panel, label="О себе:")),
-                    (wx.TextCtrl(panel, style=wx.NB_MULTILINE), wx.ID_ANY, wx.EXPAND)
+                    (wx.Button(panel, label=name_button, size=bottom_size)),
                     ])
-        # AddGrowableCol(self, col, proportion=0) proportion=1 для второго столбца (col=1)
-        # AddGrowableRow(self, row, proportion=0) и для row=3 укажем proportion=1:
-        fb.AddGrowableCol(1, 1)
-        # fb.AddGrowableRow(3, 1)
 
-        hbox.Add(fb, proportion=1, flag=wx.EXPAND | wx.ALL, border=10)
-        box.Add(hbox, proportion=1, flag=wx.EXPAND | wx.ALL, border=10)
+        fb.AddGrowableCol(1, 1)
+
+        h_box.Add(fb, proportion=1, flag=wx.EXPAND | wx.ALL, border=10)
+        box.Add(h_box, proportion=1, flag=wx.EXPAND | wx.ALL, border=10)
         # -----------------------------------------------------------------------------
-        button7 = wx.Button(panel, label='Сохранить!!!', size=boottomsize)
+        button7 = wx.Button(panel, label='Сохранить!!!', size=bottom_size)
         box.Add(button7, flag=wx.CENTER | wx.BOTTOM, border=10)
 
         panel.SetSizer(box)  # вертикальное расположение боксов отражение на экране
